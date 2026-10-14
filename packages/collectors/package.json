@@ -1,0 +1,22 @@
+{
+  "name": "@passback/collectors",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./geometry": "./src/geometry.ts",
+    "./wireframe": "./src/wireframe.ts",
+    "./shot-mask": "./src/shot-mask.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run --passWithNoTests"
+  },
+  "devDependencies": {
+    "@passback/schema": "workspace:*"
+  }
+}

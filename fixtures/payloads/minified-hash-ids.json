@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "code": {
+    "framework": "react",
+    "chain": [
+      { "name": "e", "hash": "c7a1f3e2" },
+      { "name": "Kt", "hash": "9b04d6aa" },
+      { "name": "Qn", "hash": "51e8c0b7" }
+    ],
+    "buildId": "5d2e8b1"
+  },
+  "element": {
+    "selectors": [
+      { "kind": "role", "value": "button[name=\"Add to cart\"]" },
+      { "kind": "css", "value": "div._x9k2 > button._a1b3:nth-of-type(2)" }
+    ],
+    "tag": "button",
+    "attrs": { "class": "_a1b3 _q7z0", "type": "button" },
+    "text": "Add to cart",
+    "outerHTML": "<button class=\"_a1b3 _q7z0\" type=\"button\"><svg class=\"_i8w1\" aria-hidden=\"true\" width=\"16\" height=\"16\"></svg>Add to cart</button>"
+  },
+  "visual": {
+    "rects": {
+      "self": { "x": 1104, "y": 612, "width": 148, "height": 40 },
+      "parent": { "x": 944, "y": 604, "width": 320, "height": 56 },
+      "prev": { "x": 956, "y": 612, "width": 136, "height": 40 },
+      "positioned": { "x": 928, "y": 96, "width": 352, "height": 640 }
+    },
+    "styles": {
+      "display": "inline-flex",
+      "gap": "8px",
+      "padding": "10px 16px",
+      "font-size": "15px",
+      "line-height": "20px",
+      "color": "rgb(255, 255, 255)",
+      "background-color": "rgb(37, 99, 235)",
+      "border-radius": "8px",
+      "white-space": "nowrap",
+      "overflow": "hidden"
+    },
+    "flags": { "clipped": true, "covered": false, "offViewport": false, "contrast": 5.2 }
+  },
+  "runtime": {
+    "url": "https://shop.example.com/cart?step=review",
+    "route": "/cart",
+    "flags": { "expressCheckout": false }
+  },
+  "timeline": [
+    { "t": -12900, "kind": "navigation", "from": "/products/42", "to": "/cart" },
+    {
+      "t": -9310,
+      "kind": "console",
+      "level": "warn",
+      "message": "Warning: Each child in a list should have a unique \"key\" prop.",
+      "stack": "at Qn (https://shop.example.com/assets/index-B7xk2Q9d.js:1:48213)\nat Kt (https://shop.example.com/assets/index-B7xk2Q9d.js:1:51077)"
+    }
+  ],
+  "environment": {
+    "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0",
+    "viewport": [1280, 720],
+    "dpr": 1.25,
+    "locale": "de-DE",
+    "tz": "Europe/Berlin",
+    "colorScheme": "dark",
+    "reducedMotion": true
+  },
+  "intent": {
+    "comment": "Button label gets cut off in German, the cart icon pushes it out.",
+    "category": "visual",
+    "expected": "Full label visible",
+    "actual": "Label clipped at the right edge",
+    "annotations": [
+      {
+        "type": "box",
+        "from": { "x": 120, "y": 0 },
+        "to": { "x": 148, "y": 40 },
+        "text": "clipped"
+      }
+    ]
+  }
+}

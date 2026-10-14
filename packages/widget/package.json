@@ -1,0 +1,20 @@
+{
+  "name": "@passback/widget",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "main": "./src/index.ts",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run --passWithNoTests",
+    "test:fixtures": "vitest run fixtures --passWithNoTests",
+    "build": "node scripts/build.mjs",
+    "size": "node scripts/build.mjs && node scripts/size-check.mjs"
+  },
+  "devDependencies": {
+    "@passback/collectors": "workspace:*",
+    "@passback/schema": "workspace:*"
+  }
+}

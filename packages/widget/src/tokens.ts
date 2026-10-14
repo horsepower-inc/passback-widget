@@ -1,0 +1,63 @@
+export const TOKENS: Readonly<Record<string, string>> = {
+  '--pb-radius-box': '10px',
+  '--pb-radius-control': '6px',
+  '--pb-radius-pin': '50%',
+  '--pb-size-launcher': '36px',
+  '--pb-size-pin': '22px',
+  '--pb-size-box': '300px',
+  '--pb-space-gap': '8px',
+  '--pb-space-pad': '10px',
+  '--pb-font-body': '13px/1.4 system-ui, sans-serif',
+  '--pb-font-small': '0.88em',
+  '--pb-shadow-box': '0 6px 20px rgba(0,0,0,.22)',
+  '--pb-motion-duration': '160ms',
+  '--pb-motion-ease': 'ease-out',
+  '--pb-motion-fly': '420ms',
+  '--pb-motion-spin': '0.8s',
+  '--pb-motion-stamp': '1.8s',
+  '--pb-opacity-idle': '0.5',
+  '--pb-z': '2147483647',
+};
+
+export type Scheme = 'light' | 'dark';
+
+export const SCHEMES: Readonly<Record<Scheme, Readonly<Record<string, string>>>> = {
+  light: {
+    '--pb-color-surface': '#ffffff',
+    '--pb-color-field': '#f3f4f6',
+    '--pb-color-text': '#17181c',
+    '--pb-color-text-muted': '#62656d',
+    '--pb-color-border': '#e1e3e7',
+    '--pb-color-main': '#17181c',
+    '--pb-color-accent': '#7c9dff',
+    '--pb-color-ink': '#e5261f',
+    '--pb-color-on-main': '#ffffff',
+    '--pb-color-halo': 'rgba(255,255,255,.85)',
+    '--pb-color-ok': '#1f7a43',
+    '--pb-color-bad': '#c0352b',
+    '--pb-color-ask': '#9a5b00',
+    '--pb-color-on-status': '#ffffff',
+    '--pb-color-glow': '#ffd400',
+    '--pb-color-flame': '#ff7a00',
+  },
+  dark: {
+    '--pb-color-surface': '#17181c',
+    '--pb-color-field': '#24262c',
+    '--pb-color-text': '#f4f4f5',
+    '--pb-color-text-muted': '#a3a6ad',
+    '--pb-color-border': '#33363d',
+    '--pb-color-main': '#f4f4f5',
+    '--pb-color-accent': '#2f6bff',
+    '--pb-color-ink': '#e5261f',
+    '--pb-color-on-main': '#17181c',
+    '--pb-color-halo': 'rgba(0,0,0,.7)',
+    '--pb-color-ok': '#5fd08a',
+    '--pb-color-bad': '#ff7a70',
+    '--pb-color-ask': '#ffb84d',
+    '--pb-color-on-status': '#17181c',
+    '--pb-color-glow': '#ffd400',
+    '--pb-color-flame': '#ff7a00',
+  },
+};
+
+export const DEFAULT_SCHEME: Scheme = 'dark';
