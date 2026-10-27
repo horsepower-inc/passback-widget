@@ -1,0 +1,77 @@
+{
+  "name": "@passback/vite-plugin",
+  "version": "0.1.5",
+  "description": "Vite plugin that serves the Passback widget in dev and staging builds and writes marks to the local inbox.",
+  "keywords": [
+    "passback",
+    "vite",
+    "vite-plugin",
+    "coding-agent",
+    "ai-agent",
+    "mcp",
+    "feedback",
+    "annotation"
+  ],
+  "homepage": "https://passback.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/horsepower-inc/passback-widget.git"
+  },
+  "bugs": {
+    "url": "https://github.com/horsepower-inc/passback-widget/issues"
+  },
+  "license": "MIT",
+  "type": "module",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./source": "./src/inject.ts",
+    "./root": "./src/project-root.ts",
+    "./assets": "./src/widget-artifact.ts",
+    "./manifest": "./src/manifest.ts",
+    "./settings": "./src/widget-settings.ts",
+    "./head": "./src/head.ts"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+      ".": {
+        "types": "./dist/index.d.ts",
+        "import": "./dist/index.js"
+      },
+      "./head": {
+        "types": "./dist/head.d.ts",
+        "import": "./dist/head.js"
+      }
+    }
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@babel/parser": "^7.29.9",
+    "magic-string": "^0.30.21",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@babel/types": "^7.29.8",
+    "@passback/adapters": "workspace:*",
+    "@passback/schema": "workspace:*",
+    "@passback/widget": "workspace:*",
+    "vite": "^7.3.6"
+  },
+  "peerDependencies": {
+    "vite": "^7.0.0 || ^8.0.0"
+  }
+}
