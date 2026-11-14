@@ -1,0 +1,69 @@
+{
+  "name": "passback",
+  "version": "0.1.5",
+  "description": "The CLI that wires a project's coding agent to Passback.",
+  "keywords": [
+    "passback",
+    "coding-agent",
+    "ai-agent",
+    "mcp",
+    "feedback",
+    "annotation",
+    "cli"
+  ],
+  "homepage": "https://passback.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/horsepower-inc/passback-widget.git"
+  },
+  "bugs": {
+    "url": "https://github.com/horsepower-inc/passback-widget/issues"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "bin": {
+    "passback": "./dist/bin.js"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "build": "node scripts/build.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@passback/adapters": "workspace:*",
+    "@passback/collectors": "workspace:*",
+    "@passback/daemon": "workspace:*",
+    "@passback/inbox": "workspace:*",
+    "@passback/schema": "workspace:*"
+  },
+  "peerDependencies": {
+    "playwright": ">=1.40.0"
+  },
+  "peerDependenciesMeta": {
+    "playwright": {
+      "optional": true
+    }
+  }
+}

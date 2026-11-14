@@ -1,0 +1,33 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`inbox file > renders as plain markdown 1`] = `
+"---
+id: "01J8ZKZ8J8ZKZ8J8ZKZ8J8ZKZ8"
+schemaVersion: 1
+batchId: "01J8ZKZ8J8ZKZ8J8ZKZ8J8ZKZ9"
+category: "functional"
+status: "proposed"
+iteration: 2
+route: "/checkout"
+selector: "[data-testid=\\"pay-now\\"]"
+file: "app/layout.tsx:12:3"
+buildId: "e04b6d2"
+createdAt: "2026-09-19T14:00:00Z"
+---
+Clicking Pay now does nothing — no error shown, spinner never appears.
+
+\`\`\`json annotations
+[]
+\`\`\`
+
+## Iteration 1
+
+**agent** 2026-09-19T14:05:00Z changed \`gap\` from 12 to 16 in \`src/components/PriceTag.tsx:14\`
+
+**human** 2026-09-19T14:07:00Z decline: still 2 px off at 375 px wide
+
+## Iteration 2
+
+**agent** 2026-09-19T14:11:00Z added a 375 px breakpoint rule in \`src/components/PriceTag.tsx:22\`
+"
+`;

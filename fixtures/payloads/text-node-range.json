@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "code": {
+    "framework": "unknown",
+    "chain": [],
+    "buildId": "a91c07e"
+  },
+  "element": {
+    "selectors": [
+      { "kind": "id", "value": "#hero-lede" },
+      { "kind": "css", "value": "section.hero > p.lede" }
+    ],
+    "tag": "p",
+    "attrs": { "class": "lede", "id": "hero-lede" },
+    "text": "Mark any element on the page and your coding agent gets a report it can act on — with the exact file, line and a repro.",
+    "outerHTML": "<p class=\"lede\" id=\"hero-lede\">Mark any element on the page and your coding agent gets a report it can act on — with the exact file, line and a repro.</p>"
+  },
+  "visual": {
+    "rects": {
+      "self": { "x": 160, "y": 318, "width": 560, "height": 84 },
+      "parent": { "x": 128, "y": 200, "width": 624, "height": 280 },
+      "prev": { "x": 160, "y": 232, "width": 560, "height": 64 }
+    },
+    "styles": {
+      "font-family": "\"Source Serif 4\", Georgia, serif",
+      "font-size": "22px",
+      "line-height": "28px",
+      "letter-spacing": "-0.01em",
+      "text-wrap": "balance",
+      "max-width": "560px",
+      "color": "rgb(55, 65, 81)"
+    },
+    "flags": { "clipped": false, "covered": false, "offViewport": false, "contrast": 10.3 },
+    "text": {
+      "lines": [
+        { "x": 160, "y": 318, "width": 548.2, "height": 28 },
+        { "x": 160, "y": 346, "width": 531.7, "height": 28 },
+        { "x": 160, "y": 374, "width": 88.4, "height": 28 }
+      ],
+      "baseline": 22.5,
+      "ascent": 19.6,
+      "descent": 5.4
+    }
+  },
+  "runtime": {
+    "url": "http://localhost:4175/",
+    "route": "/"
+  },
+  "timeline": [{ "t": -4200, "kind": "action", "type": "scroll", "delta": [0, 120] }],
+  "environment": {
+    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Safari/605.1.15",
+    "viewport": [1024, 768],
+    "dpr": 2,
+    "locale": "en-GB",
+    "tz": "Europe/London",
+    "colorScheme": "light",
+    "reducedMotion": false
+  },
+  "intent": {
+    "comment": "Last line is a two-word widow; balance the lede so it breaks into even lines.",
+    "category": "content",
+    "expected": "Lines of roughly equal width",
+    "actual": "Third line is 88px wide against 548px above it",
+    "annotations": [
+      { "type": "label", "from": { "x": 0, "y": 56 }, "to": { "x": 88, "y": 84 }, "text": "widow" }
+    ]
+  }
+}

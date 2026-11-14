@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "code": {
+    "framework": "react",
+    "chain": [
+      { "name": "App", "file": "src/App.tsx", "line": 21, "col": 5 },
+      { "name": "ProductPage", "file": "src/pages/ProductPage.tsx", "line": 48, "col": 9 },
+      { "name": "ProductCard", "file": "src/components/ProductCard.tsx", "line": 32, "col": 7 },
+      { "name": "PriceTag", "file": "src/components/PriceTag.tsx", "line": 14, "col": 7 }
+    ],
+    "buildId": "3f2a9c1"
+  },
+  "element": {
+    "selectors": [
+      { "kind": "testid", "value": "[data-testid=\"price\"]" },
+      { "kind": "css", "value": "article.product-card > div.price-row > span.price" }
+    ],
+    "tag": "span",
+    "attrs": { "class": "price", "data-testid": "price" },
+    "text": "$1,299.00",
+    "outerHTML": "<span class=\"price\" data-testid=\"price\">$1,299.00</span>"
+  },
+  "visual": {
+    "rects": {
+      "self": { "x": 312, "y": 486, "width": 94.5, "height": 24 },
+      "parent": { "x": 296, "y": 480, "width": 288, "height": 36 },
+      "prev": { "x": 296, "y": 440, "width": 288, "height": 28 },
+      "next": { "x": 414.5, "y": 490, "width": 72, "height": 16 }
+    },
+    "styles": {
+      "display": "inline-block",
+      "font-family": "Inter, system-ui, sans-serif",
+      "font-size": "20px",
+      "font-weight": "600",
+      "line-height": "24px",
+      "color": "rgb(17, 24, 39)",
+      "margin-left": "16px",
+      "padding": "0px",
+      "vertical-align": "baseline"
+    },
+    "flags": { "clipped": false, "covered": false, "offViewport": false, "contrast": 16.1 }
+  },
+  "runtime": {
+    "props": { "amount": 1299, "currency": "USD", "compact": false },
+    "url": "http://localhost:5173/products/42",
+    "route": "/products/:id",
+    "flags": { "newPricing": true },
+    "role": "customer"
+  },
+  "timeline": [
+    { "t": -21430, "kind": "navigation", "from": "/", "to": "/products/42" },
+    { "t": -8120, "kind": "action", "type": "scroll", "delta": [0, 360] },
+    { "t": -1650, "kind": "action", "type": "click", "selector": "[data-testid=\"price\"]" }
+  ],
+  "environment": {
+    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "viewport": [1440, 900],
+    "dpr": 2,
+    "locale": "en-US",
+    "tz": "Europe/Berlin",
+    "colorScheme": "light",
+    "reducedMotion": false,
+    "connection": "4g"
+  },
+  "intent": {
+    "comment": "Price sits 4px right of the title's left edge; should line up with it.",
+    "category": "visual",
+    "expected": "Price left edge aligned with the product title",
+    "actual": "Price is 16px in from the card edge, title is 12px",
+    "annotations": [
+      {
+        "type": "align",
+        "edge": "left",
+        "a": "[data-testid=\"price\"]",
+        "b": "[data-testid=\"product-title\"]",
+        "actual": { "a": 312, "b": 308 }
+      }
+    ]
+  },
+  "repro": {
+    "steps": [
+      { "op": "goto", "target": "/products/42" },
+      { "op": "wait", "target": "[data-testid=\"price\"]" }
+    ]
+  }
+}

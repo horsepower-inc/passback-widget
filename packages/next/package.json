@@ -1,0 +1,76 @@
+{
+  "name": "@passback/next",
+  "version": "0.1.5",
+  "description": "Next.js integration for Passback: the widget and the mark and status route. A local agent in next dev, or the hosted relay from a deployed build.",
+  "homepage": "https://passback.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/horsepower-inc/passback-widget.git"
+  },
+  "bugs": {
+    "url": "https://github.com/horsepower-inc/passback-widget/issues"
+  },
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./route": {
+      "types": "./src/route.ts",
+      "import": "./dist/route.js",
+      "require": "./dist/route.cjs"
+    },
+    "./loader": "./dist/loader.cjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "main": "./dist/index.cjs",
+    "types": "./dist/index.d.ts",
+    "exports": {
+      ".": {
+        "types": "./dist/index.d.ts",
+        "import": "./dist/index.js",
+        "require": "./dist/index.cjs"
+      },
+      "./route": {
+        "types": "./dist/route.d.ts",
+        "import": "./dist/route.js",
+        "require": "./dist/route.cjs"
+      },
+      "./loader": "./dist/loader.cjs"
+    }
+  },
+  "sideEffects": false,
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@babel/parser": "^7.29.9",
+    "@babel/types": "^7.29.8",
+    "@passback/adapters": "workspace:*",
+    "@passback/schema": "workspace:*",
+    "@passback/vite-plugin": "workspace:*",
+    "@types/react": "^19.3.0",
+    "magic-string": "^0.30.21",
+    "next": "^16.3.6",
+    "react": "^19.3.0",
+    "zod": "^4.6.5"
+  },
+  "peerDependencies": {
+    "next": ">=15.3.0 <17",
+    "react": ">=18"
+  }
+}

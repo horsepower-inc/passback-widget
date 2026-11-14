@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "code": {
+    "framework": "react",
+    "chain": [
+      { "name": "RootLayout", "file": "app/layout.tsx", "line": 12, "col": 3 },
+      { "name": "CheckoutPage", "file": "app/checkout/page.tsx", "line": 27, "col": 5 },
+      { "name": "PaymentForm", "file": "app/checkout/PaymentForm.tsx", "line": 88, "col": 9 },
+      { "name": "SubmitButton", "file": "components/SubmitButton.tsx", "line": 9, "col": 5 }
+    ],
+    "buildId": "e04b6d2"
+  },
+  "element": {
+    "selectors": [
+      { "kind": "testid", "value": "[data-testid=\"pay-now\"]" },
+      { "kind": "role", "value": "button[name=\"Pay now\"]" },
+      { "kind": "css", "value": "form#payment > button[type=submit]" }
+    ],
+    "tag": "button",
+    "attrs": { "class": "btn btn-primary", "data-testid": "pay-now", "type": "submit" },
+    "text": "Pay now",
+    "outerHTML": "<button class=\"btn btn-primary\" data-testid=\"pay-now\" type=\"submit\">Pay now</button>"
+  },
+  "visual": {
+    "rects": {
+      "self": { "x": 480, "y": 704, "width": 320, "height": 48 },
+      "parent": { "x": 464, "y": 360, "width": 352, "height": 408 },
+      "prev": { "x": 480, "y": 632, "width": 320, "height": 56 }
+    },
+    "styles": {
+      "display": "block",
+      "width": "320px",
+      "font-size": "16px",
+      "color": "rgb(255, 255, 255)",
+      "background-color": "rgb(22, 163, 74)",
+      "cursor": "pointer"
+    },
+    "flags": { "clipped": false, "covered": false, "offViewport": false, "contrast": 3.3 }
+  },
+  "runtime": {
+    "props": { "pending": false, "disabled": false, "label": "Pay now" },
+    "store": {
+      "cart": { "items": 2, "total": 84.5, "currency": "EUR" },
+      "checkout": { "step": "payment" }
+    },
+    "url": "http://localhost:3000/checkout",
+    "route": "/checkout",
+    "flags": { "stripeElements": true },
+    "role": "guest"
+  },
+  "timeline": [
+    { "t": -18200, "kind": "navigation", "from": "/cart", "to": "/checkout" },
+    { "t": -11050, "kind": "action", "type": "click", "selector": "#card-number" },
+    { "t": -10980, "kind": "action", "type": "input", "selector": "#card-number" },
+    { "t": -6420, "kind": "action", "type": "input", "selector": "#card-expiry" },
+    { "t": -2310, "kind": "action", "type": "click", "selector": "[data-testid=\"pay-now\"]" },
+    { "t": -2290, "kind": "network", "url": "/api/cart", "method": "GET", "status": 200, "ms": 41 },
+    {
+      "t": -2270,
+      "kind": "network",
+      "url": "/api/checkout/intent",
+      "method": "POST",
+      "status": 500,
+      "ms": 1843,
+      "body": "{\"error\":\"PaymentIntentError\",\"message\":\"amount must be an integer in the smallest currency unit\",\"requestId\":\"req_8Hc2kQ\"}"
+    },
+    {
+      "t": -420,
+      "kind": "rejection",
+      "message": "Error: Checkout failed (500)",
+      "stack": "Error: Checkout failed (500)\n    at submitPayment (app/checkout/PaymentForm.tsx:61:13)\n    at async onSubmit (app/checkout/PaymentForm.tsx:74:5)"
+    },
+    {
+      "t": -415,
+      "kind": "console",
+      "level": "error",
+      "message": "Unhandled checkout error: Checkout failed (500)"
+    }
+  ],
+  "environment": {
+    "ua": "Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0",
+    "viewport": [1280, 800],
+    "dpr": 2,
+    "locale": "fr-FR",
+    "tz": "Europe/Paris",
+    "colorScheme": "light",
+    "reducedMotion": false,
+    "connection": "wifi"
+  },
+  "intent": {
+    "comment": "Clicking Pay now does nothing — no error shown, spinner never appears.",
+    "category": "functional",
+    "expected": "Order confirmation, or a visible error if payment fails",
+    "actual": "Button stays idle; POST /api/checkout/intent returns 500",
+    "annotations": []
+  },
+  "repro": {
+    "steps": [
+      { "op": "goto", "target": "/checkout" },
+      { "op": "click", "target": "[data-testid=\"pay-now\"]" },
+      { "op": "wait", "target": "[role=\"alert\"]" }
+    ]
+  }
+}

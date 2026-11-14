@@ -1,0 +1,86 @@
+{
+  "data-passback-auto-start": {
+    "type": "boolean",
+    "default": true,
+    "allowedValues": [true, false],
+    "description": "Starts the widget when the page loads. Only the exact value \"false\" disables startup; the existing global opt-out also applies."
+  },
+  "data-passback-corner": {
+    "type": "string",
+    "default": "bottom-right",
+    "allowedValues": ["bottom-right", "bottom-left", "top-right", "top-left"],
+    "description": "Screen corner where the launcher sits."
+  },
+  "data-passback-launcher": {
+    "type": "string",
+    "default": "visible",
+    "allowedValues": ["visible", "hidden"],
+    "description": "Whether the launcher button is shown; any value other than \"hidden\" shows it."
+  },
+  "data-passback-hotkey": {
+    "type": "string",
+    "default": "alt+shift+r",
+    "allowedValues": null,
+    "description": "Hotkey that starts marking. Either \"off\" or modifiers plus one letter or digit, joined by \"+\", and requiring alt, ctrl or meta. An invalid value keeps the existing fallback."
+  },
+  "data-passback-hide-hotkey": {
+    "type": "string",
+    "default": "alt+shift+h",
+    "allowedValues": null,
+    "description": "Hotkey that hides or shows marks. Uses the same syntax and \"off\" behavior as the marking hotkey; an invalid value keeps its existing fallback."
+  },
+  "data-passback-theme": {
+    "type": "string",
+    "default": "auto",
+    "allowedValues": ["auto", "light", "dark"],
+    "description": "Widget color theme. With \"auto\" the theme follows the existing page-background rule."
+  },
+  "data-passback-main": {
+    "type": "string",
+    "default": "",
+    "allowedValues": null,
+    "description": "Main color override. Empty means no override; a valid override is a color written as #rrggbb."
+  },
+  "data-passback-secondary": {
+    "type": "string",
+    "default": "",
+    "allowedValues": null,
+    "description": "Secondary color override. Empty means no override; a valid override is a color written as #rrggbb."
+  },
+  "data-passback-chunk": {
+    "type": "string",
+    "default": null,
+    "allowedValues": null,
+    "description": "Collector chunk URL. When omitted, the URL is derived as collector.js beside the selected widget script when possible."
+  },
+  "data-passback-endpoint": {
+    "type": "string",
+    "default": null,
+    "allowedValues": null,
+    "description": "Relay ingest URL. When omitted, no relay endpoint is supplied."
+  },
+  "data-passback-screenshots": {
+    "type": "boolean",
+    "default": false,
+    "allowedValues": [true, false],
+    "description": "Opts in to screenshots. Only the exact value \"true\" opts in, and it still needs the existing chunk and upload configuration."
+  },
+  "data-passback-shot": {
+    "type": "string",
+    "default": null,
+    "allowedValues": null,
+    "description": "Screenshot chunk URL. When omitted, the URL is derived as shot.js beside the widget script when possible."
+  },
+  "data-passback-shot-upload": {
+    "type": "string",
+    "default": null,
+    "allowedValues": null,
+    "description": "Local screenshot upload URL, used only when there is no relay endpoint; with a relay endpoint the upload URL is derived from it."
+  },
+  "data-passback-panel": {
+    "type": "string",
+    "default": "",
+    "allowedValues": null,
+    "description": "Panel chunk URL, trimmed before use. Empty leaves the local Inbox tool unavailable."
+  }
+}
