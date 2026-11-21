@@ -1,0 +1,21 @@
+{
+  "name": "@passback/adapters",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./local": "./src/local.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@passback/inbox": "workspace:*",
+    "@passback/schema": "workspace:*"
+  }
+}
